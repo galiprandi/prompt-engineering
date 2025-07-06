@@ -35,7 +35,7 @@ Esta guía presenta técnicas y frameworks para optimizar la interacción con Mo
 
 **1. Fundamentos y Principios Clave:** Impacto del prompt, anatomía de un LLM y buenas prácticas.
 
-**2. Técnicas de Prompting Esenciales:** Zero-shot, Few-shot, Chain-of-Thought, RAG y más.
+**2. Técnicas de Prompting Esenciales:** Zero-shot, Few-shot, Chain-of-Thought, RAG, Multimodal & Tool-augmented y Incremental Prompting.
 
 **3. Framework CRTR:** Estructura, beneficios y ejemplos prácticos.
 
@@ -45,7 +45,7 @@ Esta guía presenta técnicas y frameworks para optimizar la interacción con Mo
 
 ---
 
-# El Prompt como Vector de Optimización
+## El Prompt como Vector de Optimización
 
 La calidad del prompt es el principal mecanismo de control sobre el rendimiento, el coste y la fiabilidad de un sistema basado en LLMs.
 
@@ -66,35 +66,28 @@ Permite crear prompts reutilizables, versionados y fáciles de mantener.
 
 ---
 
-# Cómo “piensa” un LLM
+## Cómo “piensa” un LLM
 
 Un LLM no “entiende” el lenguaje; es un motor de predicción que sigue un proceso matemático para generar el siguiente token más probable. Tu prompt es el punto de partida de este ciclo:
 
-**1. Tokenización**  
-El prompt se descompone en piezas (tokens).  
+**1. Tokenización:** El prompt se descompone en piezas (tokens).  
 `"Resume este texto"` → `["Resume", "este", "texto"]`
 
-**2. Embeddings (Vectores Semánticos)**  
-Cada token se convierte en un vector numérico que captura su significado y relación con otros.
+**2. Embeddings (Vectores Semánticos):** Cada token se convierte en un vector numérico que captura su significado y relación con otros.
 
-**3. Capas de Atención (Self-Attention)**  
-El modelo pondera la importancia de cada token del contexto para decidir dónde "enfocar" su cálculo.
+**3. Capas de Atención (Self-Attention):** El modelo pondera la importancia de cada token del contexto para decidir dónde "enfocar" su cálculo.
 
-**4. Predicción (Distribución de Probabilidad)**  
-Calcula la probabilidad de cada palabra posible en su vocabulario para ser el siguiente token.
+**4. Predicción (Distribución de Probabilidad):** Calcula la probabilidad de cada palabra posible en su vocabulario para ser el siguiente token.
 
-**5. Generación y Bucle**  
-Elige el token más probable, lo añade a la secuencia y repite todo el proceso hasta generar la respuesta completa.
+**5. Generación y Bucle:** Elige el token más probable, lo añade a la secuencia y repite todo el proceso hasta generar la respuesta completa.
 
-<hr/>
-
-🧠 **Tu prompt es el director de orquesta:** cada palabra que añades o ajustas es una palanca para dirigir la <strong>atención</strong> del modelo y, por tanto, el resultado final.
+#### 🧠 *Tu prompt es el director de orquesta:* cada palabra que añades o ajustas es una palanca para dirigir la *atención* del modelo y, por tanto, el resultado final.
 
 ---
 
-# ¿Cómo influye el prompt en la inferencia?
+## ¿Cómo influye el prompt en la inferencia?
 
-El prompt es la palanca que ajusta el motor de inferencia del LLM en tiempo real. Así es como cada palabra que escribes moldea el resultado:
+El prompt es la palanca que ajusta el motor de **inferencia del LLM en tiempo real**. Así es como cada palabra que escribes **moldea el resultado**:
 
 **1. Condicionamiento del Contexto:**
 Cada token de tu prompt se convierte en un vector que establece el punto de partida para el mecanismo de atención.
@@ -111,7 +104,7 @@ Logras controlar la salida del modelo de forma precisa **sin necesidad de modifi
 
 ---
 
-# Buen Prompt vs Mal Prompt
+## Buen Prompt vs Mal Prompt
 
 No todos los prompts son iguales. Pequeños cambios pueden transformar la calidad de las respuestas.
 
@@ -125,7 +118,7 @@ No todos los prompts son iguales. Pequeños cambios pueden transformar la calida
 
 ---
 
-# Técnica 1: Zero-shot / Few-shot
+## Técnica 1: Zero-shot / Few-shot
 
 ### Zero-shot
 ✅ El modelo responde usando solo su conocimiento general, sin ejemplos específicos.  
@@ -149,11 +142,13 @@ Bot:
 
 ---
 
-# Técnica 2: Chain-of-Thought (CoT)
+## Técnica 2: Chain-of-Thought (CoT)
 
-- “Piensa paso a paso” obliga al modelo a explicitar su razonamiento.  
-- Mejora precisión en tareas complejas o con varios pasos.  
-- Variantes avanzadas: *Self-Consistency*, *Tree of Thoughts*.
+✔️ “Piensa paso a paso” obliga al modelo a explicitar su razonamiento.  
+
+✔️ Mejora precisión en tareas complejas o con varios pasos.  
+
+Variantes avanzadas: *Self-Consistency*, *Tree of Thoughts*.
 
 **Ejemplo**
 
@@ -166,9 +161,11 @@ Razoná paso a paso y, al final, responde en una sola línea.
 
 # Técnica 3: Role / Persona
 
-- Define quién “habla”: mentor, abogado, tester, etc.  
-- Establece contexto y tono coherente.  
-- Mejora consistencia y relevancia de la respuesta.
+✔️ Define quién “habla”: mentor, abogado, tester, etc.  
+
+✔️ Establece contexto y tono coherente.  
+
+✔️ Mejora consistencia y relevancia de la respuesta.
 
 **Ejemplo**
 
@@ -181,9 +178,11 @@ Explica a un junior por qué conviene usar `unknown` en lugar de `any`.
 
 # Técnica 4: Retrieval-Augmented Generation (RAG)
 
-- Integra fragmentos de documentos externos para respuestas precisas y actualizadas.  
-- Ideal para FAQs, bases de conocimiento y documentación interna.  
-- Reduce alucinaciones al apoyar respuestas en datos verificables.
+✔️ Integra fragmentos de documentos externos para respuestas precisas y actualizadas.  
+
+✔️ Ideal para FAQs, bases de conocimiento y documentación interna.  
+
+✔️ Reduce alucinaciones al apoyar respuestas en datos verificables.
 
 **Ejemplo**
 
@@ -199,9 +198,13 @@ Pregunta: ¿Cómo cambio el token de refresh?
 
 # Técnica 5: Multimodal & Tool-augmented
 
-- Combina texto, imágenes y llamadas a funciones (`function calling`).  
-- Útil para ejecutar código, analizar diagramas o integrar herramientas externas.  
-- Amplía las capacidades del LLM más allá del texto plano.
+<br/>
+
+✔️ Combina texto, imágenes y llamadas a funciones (`function calling`).  
+
+✔️ Útil para ejecutar código, analizar diagramas o integrar herramientas externas.  
+
+✔️ Amplía las capacidades del LLM más allá del texto plano.
 
 **Ejemplo**
 
@@ -211,6 +214,35 @@ Pregunta: ¿Cómo cambio el token de refresh?
   "content": "Tienes la función runTests()"
 }
 ```
+
+---
+
+# Técnica 6: Incremental Prompting
+
+Consiste en **dividir un problema complejo en pasos pequeños**, usando prompts en secuencia donde cada resultado alimenta al siguiente.
+
+**Beneficios clave:**
+
+✔️ Mejora la precisión en tareas complejas.
+
+✔️ Reduce errores de contexto.
+
+✔️ Permite un control granular del proceso.
+
+**Ejemplo (Traducción + Resumen):**
+
+1.  **Prompt 1 (Traducir):** `Traduce: “La IA está transformando las empresas.”`
+    → `AI is transforming businesses.`
+2.  **Prompt 2 (Resumir):** `Resume el texto anterior en una frase.`
+    → `AI is changing business.`
+
+**Aplicaciones:**
+
+✔️ Procesamiento de textos largos.
+
+✔️ Generación de código paso a paso.
+
+✔️ Razonamiento complejo.
 
 ---
 
@@ -232,11 +264,15 @@ Esto permite crear prompts mantenibles y auditables en equipos técnicos.
 
 # Beneficios del Framework CRTR
 
-- 🎯 Reduce ambigüedad, mejorando la calidad de las respuestas.  
-- 🔄 Facilita la creación de plantillas reutilizables por todo el equipo.  
-- 📚 Permite versionar y auditar prompts de forma sencilla.  
-- 🚀 Escala bien en proyectos complejos con múltiples casos de uso.
-- 🐛 Facilita el debugging de prompts: Si una respuesta es incorrecta, puedes aislar el problema. ¿Falló el Contexto? ¿El Rol es ambiguo? ¿La Tarea es imprecisa?
+✔️ Reduce ambigüedad, mejorando la calidad de las respuestas.  
+
+✔️ Facilita la creación de plantillas reutilizables por todo el equipo.  
+
+✔️ Permite versionar y auditar prompts de forma sencilla.  
+
+✔️ Escala bien en proyectos complejos con múltiples casos de uso.
+
+✔️ Facilita el debugging de prompts: Si una respuesta es incorrecta, puedes aislar el problema. ¿Falló el Contexto? ¿El Rol es ambiguo? ¿La Tarea es imprecisa?
 
 Estas ventajas hacen que CRTR sea ideal para equipos técnicos que buscan mantener consistencia y eficiencia en sus interacciones con LLMs.
 
