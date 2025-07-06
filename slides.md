@@ -6,7 +6,6 @@ theme: geist
 transition: slide-left
 colorSchema: light
 canvasWidth: 1280
-footer: Germán Aliprandi · galiprandi@gmail.com · linkedin.com/in/galiprandi
 ---
 
 
@@ -63,26 +62,27 @@ Permite crear prompts reutilizables, versionados y fáciles de mantener.
 
 # Cómo “piensa” un LLM
 
-Un LLM no “entiende” el lenguaje como las personas. Procesa texto como datos y números. Cada prompt inicia esta cadena:
+Un LLM no “entiende” el lenguaje; es un motor de predicción que sigue un proceso matemático para generar el siguiente token más probable. Tu prompt es el punto de partida de este ciclo:
 
-1. **Ventana de contexto**  
-   El prompt y datos previos caben en un espacio limitado (tokens).
+**1. ✂️ Tokenización**  
+El prompt se descompone en piezas (tokens).  
+`"Resume este texto"` → `["Resume", "este", "texto"]`
 
-2. **Embeddings → vectores semánticos**  
-   Convierte palabras en números que capturan significado.
+**2. 🔢 Embeddings (Vectores Semánticos)**  
+Cada token se convierte en un vector numérico que captura su significado y relación con otros.
 
-3. **Capas de auto-atención**  
-   Evalúa qué partes del texto importan más para cada token siguiente.
+**3. 🧠 Capas de Atención (Self-Attention)**  
+El modelo pondera la importancia de cada token del contexto para decidir dónde "enfocar" su cálculo.
 
-4. **Distribución de probabilidad → token**  
-   Calcula las probabilidades y elige la próxima palabra.
+**4. 🎲 Predicción (Distribución de Probabilidad)**  
+Calcula la probabilidad de cada palabra posible en su vocabulario para ser el siguiente token.
 
-5. **Bucle hasta terminar**  
-   Repite el proceso, token por token.
+**5. ✍️ Generación y Bucle**  
+Elige el token más probable, lo añade a la secuencia y repite todo el proceso hasta generar la respuesta completa.
 
-🧠 *Cada token que agregues al prompt puede redirigir la atención del modelo y cambiar radicalmente la respuesta.*
+<hr/>
 
-
+🧠 **Tu prompt es el director de orquesta:** cada palabra que añades o ajustas es una palanca para dirigir la <strong>atención</strong> del modelo y, por tanto, el resultado final.
 
 ---
 
@@ -223,6 +223,7 @@ Esto permite crear prompts mantenibles y auditables en equipos técnicos.
 - 🔄 Facilita la creación de plantillas reutilizables por todo el equipo.  
 - 📚 Permite versionar y auditar prompts de forma sencilla.  
 - 🚀 Escala bien en proyectos complejos con múltiples casos de uso.
+- 🐛 Facilita el debugging de prompts: Si una respuesta es incorrecta, puedes aislar el problema. ¿Falló el Contexto? ¿El Rol es ambiguo? ¿La Tarea es imprecisa?
 
 Estas ventajas hacen que CRTR sea ideal para equipos técnicos que buscan mantener consistencia y eficiencia en sus interacciones con LLMs.
 
