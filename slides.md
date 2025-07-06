@@ -15,12 +15,11 @@ seoMeta:
   ogDescription: "Esta guía presenta técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo."
   ogUrl: "https://galiprandi.github.io/prompt-engineering/"
 
-  class: "text-center"
-  layout: center
 ---
 
 # Prompt Engineering
-## Guía Práctica
+
+**Guía Práctica**
 
 Esta guía presenta técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo.
 
