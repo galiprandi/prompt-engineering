@@ -16,18 +16,16 @@ seoMeta:
   ogUrl: "https://galiprandi.github.io/prompt-engineering/"
 
 
+layout: center
 class: "text-center"
 ---
 
 # Prompt Engineering
+## Guía Práctica para Equipos Técnicos
 
-### Guía Práctica
-
-Esta guía presenta técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo.
-
-✍️ Autor: [Germán Aliprandi](https://galiprandi.github.io/me/)
-
-⚖️ Licencia: [MIT](https://opensource.org/licenses/MIT)
+<div class="abs-br m-6 text-sm">
+  Germán Aliprandi | Licencia MIT
+</div>
 
 
 ---
