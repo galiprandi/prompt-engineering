@@ -14,7 +14,6 @@ seoMeta:
   ogTitle: "Prompt Engineering – Guía Práctica para Equipos Técnicos"
   ogDescription: "Esta guía presenta técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo."
   ogUrl: "https://galiprandi.github.io/prompt-engineering/"
-
 ---
 
 # Prompt Engineering
@@ -80,7 +79,7 @@ Un LLM no “entiende” el lenguaje; es un motor de predicción que sigue un pr
 
 **5. Generación y Bucle:** Elige el token más probable, lo añade a la secuencia y repite todo el proceso hasta generar la respuesta completa.
 
-#### 🧠 *Tu prompt es el director de orquesta:* cada palabra que añades o ajustas es una palanca para dirigir la *atención* del modelo y, por tanto, el resultado final.
+#### 💡 *Tu prompt es el director de orquesta:* cada palabra que añades o ajustas es una palanca para dirigir la *atención* del modelo y, por tanto, el resultado final.
 
 ---
 
@@ -164,7 +163,7 @@ Bot:
 
 ✔️ Mejora precisión en tareas complejas o con varios pasos.  
 
-**Variantes avanzadas:** *Self-Consistency*, *Tree of Thoughts*.
+**Variantes avanzadas:** *Self-Consistency* (auto-consistencia), *Tree of Thoughts* (árbol de pensamientos).
 
 **Ejemplo**
 
@@ -217,6 +216,8 @@ Contexto:
 
 Pregunta: ¿Cómo cambio el token de refresh?
 ```
+
+**Alucinación:** Respuestas generadas por el modelo que **suenan correctas**, pero **son falsas o inventadas**, sin base real en datos o hechos.
 
 ---
 
@@ -271,9 +272,7 @@ Resume el texto anterior en una sola frase.
 
 ## El Framework CRTR
 
-El framework **CRTR** es una metodología sistemática para estructurar prompts de manera clara y escalable que permite crear prompts mantenibles y auditables en equipos técnicos.
-
-Divide el prompt en **cuatro bloques esenciales** que ayudan a reducir ambigüedad y facilitar la reutilización:
+CRTR es un framework para **estructurar prompts** de forma clara, escalable y reutilizable. Se compone de estos cuatro bloques:
 
 | Bloque          | Contenido                  | Pregunta clave              |
 |-----------------|----------------------------|----------------------------|
@@ -306,7 +305,7 @@ Este ejemplo muestra cómo estructurar un prompt para redactar documentación t�
 
 **Metodología:**
  
- ✔️ **Contexto:** Defininimos el contexto para situar al modelo
+ ✔️ **Contexto:** Definimos el contexto para situar al modelo
  
  ✔️ **Role:** Definimos el rol para darle la perspectiva adecuada
  
