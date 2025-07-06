@@ -29,7 +29,7 @@ Esta guía presenta técnicas y frameworks para optimizar la interacción con Mo
 
 ---
 
-## Temario
+## Temas a cubrir
 
 **1. Fundamentos y Principios Clave:** Impacto del prompt, anatomía de un LLM y buenas prácticas.
 
