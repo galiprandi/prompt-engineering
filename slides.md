@@ -232,3 +232,11 @@ Result: …
 
 ---
 
+# Muchas gracias
+
+
+### Autor: Germán Aliprandi
+
+ 📧 galiprandi@gmail.com
+
+ 🔗 [linkedin.com/in/galiprandi](https://linkedin.com/in/galiprandi)
