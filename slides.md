@@ -1,25 +1,33 @@
 ---
-title: "Prompt Engineering – Guía práctica para equipos"
-author: "Germán Aliprandi - galiprandi@gmail.com"
+title: Prompt Engineering – Guía práctica para equipos
+author: Germán Aliprandi
 date: "3 Jul 2024"
 theme: geist
-class: text-center
 transition: slide-left
-mdc: true
+
+colorSchema: light
+canvasWidth: 1280
+
+footer: Germán Aliprandi · galiprandi@gmail.com · linkedin.com/in/galiprandi
+
 ---
 
-# Prompt Engineering – Guía práctica para equipos
+# Prompt Engineering
+
+## Guía práctica
+
+Guía práctica para mejorar prompts y aprovechar los modelos de lenguaje, con foco en el framework CRTR.
 
 ---
 
-# Agenda
+# Temas a tratar:
 
-1. ¿Por qué importa el prompt?  
-2. Cómo “piensa” un LLM  
-3. Buen Prompt vs Mal Prompt  
-4–8. Técnicas de prompting  
-9–13. Framework **CRTR** y ejemplos  
-14–15. Recursos  
+- ¿Por qué importa el prompt?  
+- Cómo “piensa” un LLM  
+- Buen Prompt vs Mal Prompt  
+- Técnicas de prompting  
+- Framework **CRTR** y ejemplos  
+- Recursos  
 
 ---
 
