@@ -7,7 +7,7 @@ colorSchema: light
 canvasWidth: 1280
 
 defaults:
-  layout: default
+  layout: cover
   transition: fade
   
 seoMeta:
@@ -15,9 +15,8 @@ seoMeta:
   ogDescription: "Esta guía presenta técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo."
   ogUrl: "https://galiprandi.github.io/prompt-engineering/"
 
-
-layout: center
-class: "text-center"
+  class: "text-center"
+  layout: center
 ---
 
 # Prompt Engineering
@@ -96,7 +95,7 @@ Elige el token más probable, lo añade a la secuencia y repite todo el proceso 
 
 ---
 
-## ¿Cómo influye el prompt en la inferencia?
+# ¿Cómo influye el prompt en la inferencia?
 
 El prompt es la palanca que ajusta el motor de inferencia del LLM en tiempo real. Así es como cada palabra que escribes moldea el resultado:
 
@@ -234,7 +233,7 @@ Esto permite crear prompts mantenibles y auditables en equipos técnicos.
 
 ---
 
-## Beneficios del Framework CRTR
+# Beneficios del Framework CRTR
 
 - 🎯 Reduce ambigüedad, mejorando la calidad de las respuestas.  
 - 🔄 Facilita la creación de plantillas reutilizables por todo el equipo.  
