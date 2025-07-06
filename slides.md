@@ -16,32 +16,31 @@ defaults:
 
 # Prompt Engineering
 
-**Guía Práctica para Equipos Técnicos**
+### Guía Práctica
 
-Técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo.
+Esta guía presenta técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo.
+
+✍️ Autor: [Germán Aliprandi](https://galiprandi.github.io/me/)
+
+⚖️ Licencia: [MIT](https://opensource.org/licenses/MIT)
 
 
 ---
 
+
 # Agenda
 
-☑️ **El Prompt como Vector de Optimización** 
-*Impacto en rendimiento, coste y latencia.*
+**1. Fundamentos y Principios Clave**
+   - Impacto del prompt, anatomía de un LLM y buenas prácticas.
 
-☑️ **Anatomía de la Inferencia en LLMs** 
-*Del token a la distribución de probabilidad.*
+**2. Técnicas de Prompting Esenciales**
+   - Zero-shot, Few-shot, Chain-of-Thought, RAG y más.
 
-☑️ **Principios de Prompts Efectivos** 
-*Análisis comparativo y buenas prácticas.*
+**3. Framework CRTR para Escalabilidad**
+   - Estructura, beneficios y ejemplos prácticos.
 
-☑️ **Técnicas Fundamentales de Prompting** 
-*Zero-shot, Few-shot, CoT, RAG y Function Calling.*
-
-☑️ **Framework CRTR: Estructura y Escalabilidad**  
-*Un método sistemático para prompts mantenibles.*
-
-☑️ **Recursos y Siguientes Pasos**  
-*Lecturas y plantillas recomendadas.*
+**4. Recursos y Siguientes Pasos**
+   - Plantillas, lecturas y herramientas útiles.
 
 
 
@@ -51,16 +50,18 @@ Técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (L
 
 La calidad del prompt es el principal mecanismo de control sobre el rendimiento, el coste y la fiabilidad de un sistema basado en LLMs.
 
-#### 1. Reducción de Ambigüedad
+### Beneficios
+
+**1. Reducción de Ambigüedad**
 Mejora precisión y consistencia de las respuestas.
 
-#### 2. Eficiencia de Recursos
+**2. Eficiencia de Recursos**
 Menor consumo de tokens → menor coste y latencia.
 
-#### 3. Mitigación de Riesgos
+**3. Mitigación de Riesgos**
 Primera línea de defensa contra alucinaciones y *outputs* inesperados.
 
-#### 4. Estandarización y Escalabilidad
+**4. Estandarización y Escalabilidad**
 Permite crear prompts reutilizables, versionados y fáciles de mantener.
 
 
@@ -70,20 +71,20 @@ Permite crear prompts reutilizables, versionados y fáciles de mantener.
 
 Un LLM no “entiende” el lenguaje; es un motor de predicción que sigue un proceso matemático para generar el siguiente token más probable. Tu prompt es el punto de partida de este ciclo:
 
-**1. ✂️ Tokenización**  
+**1. Tokenización**  
 El prompt se descompone en piezas (tokens).  
 `"Resume este texto"` → `["Resume", "este", "texto"]`
 
-**2. 🔢 Embeddings (Vectores Semánticos)**  
+**2. Embeddings (Vectores Semánticos)**  
 Cada token se convierte en un vector numérico que captura su significado y relación con otros.
 
-**3. 🧠 Capas de Atención (Self-Attention)**  
+**3. Capas de Atención (Self-Attention)**  
 El modelo pondera la importancia de cada token del contexto para decidir dónde "enfocar" su cálculo.
 
-**4. 🎲 Predicción (Distribución de Probabilidad)**  
+**4. Predicción (Distribución de Probabilidad)**  
 Calcula la probabilidad de cada palabra posible en su vocabulario para ser el siguiente token.
 
-**5. ✍️ Generación y Bucle**  
+**5. Generación y Bucle**  
 Elige el token más probable, lo añade a la secuencia y repite todo el proceso hasta generar la respuesta completa.
 
 <hr/>
@@ -94,12 +95,19 @@ Elige el token más probable, lo añade a la secuencia y repite todo el proceso 
 
 ## ¿Cómo influye el prompt en la inferencia?
 
-Cada token del prompt entra en la ventana de contexto y se transforma en vectores numéricos.  
-Esos vectores actúan como **claves y valores** en el mecanismo de atención, decidiendo dónde enfocar el “interés” del modelo.
+El prompt es la palanca que ajusta el motor de inferencia del LLM en tiempo real. Así es como cada palabra que escribes moldea el resultado:
 
-🔎 Ajustar el prompt —definir roles, dar ejemplos, añadir datos externos— desplaza el foco de atención y modifica las probabilidades de cada token generado.
+**1. Condicionamiento del Contexto:**
+Cada token de tu prompt se convierte en un vector que establece el punto de partida para el mecanismo de atención.
 
-⚙️ Incluso un solo token inicial puede “afilar” o “aplanar” la distribución de probabilidad, alterando por completo el resultado… **sin tocar los pesos del modelo.**
+**2. Dirección del Foco de Atención:**
+Al añadir instrucciones, ejemplos o un rol, le das "pistas" al modelo sobre qué tokens son más importantes, guiando su foco.
+
+**3. Modificación de la Probabilidad:**
+El resultado de la atención altera la distribución de probabilidad para el siguiente token. Un prompt específico "afila" esta distribución, haciendo que la respuesta deseada sea mucho más probable.
+
+**4. Control sin Re-entrenamiento:**
+Logras controlar la salida del modelo de forma precisa **sin necesidad de modificar sus pesos internos**, todo ocurre durante la inferencia.
 
 
 ---
@@ -118,7 +126,7 @@ No todos los prompts son iguales. Pequeños cambios pueden transformar la calida
 
 ---
 
-# Técnica 1 – Zero-shot / Few-shot
+# Técnica 1: Zero-shot / Few-shot
 
 ### Zero-shot
 ✅ El modelo responde usando solo su conocimiento general, sin ejemplos específicos.  
@@ -142,7 +150,7 @@ Bot:
 
 ---
 
-# Técnica 2 – Chain-of-Thought (CoT)
+# Técnica 2: Chain-of-Thought (CoT)
 
 - “Piensa paso a paso” obliga al modelo a explicitar su razonamiento.  
 - Mejora precisión en tareas complejas o con varios pasos.  
@@ -157,7 +165,7 @@ Razoná paso a paso y, al final, responde en una sola línea.
 
 ---
 
-# Técnica 3 – Role / Persona
+# Técnica 3: Role / Persona
 
 - Define quién “habla”: mentor, abogado, tester, etc.  
 - Establece contexto y tono coherente.  
@@ -172,7 +180,7 @@ Explica a un junior por qué conviene usar `unknown` en lugar de `any`.
 
 ---
 
-# Técnica 4 – Retrieval-Augmented Generation (RAG)
+# Técnica 4: Retrieval-Augmented Generation (RAG)
 
 - Integra fragmentos de documentos externos para respuestas precisas y actualizadas.  
 - Ideal para FAQs, bases de conocimiento y documentación interna.  
@@ -190,7 +198,7 @@ Pregunta: ¿Cómo cambio el token de refresh?
 
 ---
 
-# Técnica 5 – Multimodal & Tool-augmented
+# Técnica 5: Multimodal & Tool-augmented
 
 - Combina texto, imágenes y llamadas a funciones (`function calling`).  
 - Útil para ejecutar código, analizar diagramas o integrar herramientas externas.  
