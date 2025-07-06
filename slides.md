@@ -300,17 +300,17 @@ Task: …
 Result: …
 ````
 
-* [LearnPrompting – Prompt Structure & Key Parts](https://learnprompting.org/docs/intro/prompt-structure)
+* [Prompt Engineering Guide](https://learnprompting.org/docs/introduction)
   Guía completa para entender y construir prompts efectivos.
 
-* [DAIR AI – Prompt Engineering Guide](https://www.dair.ai/guide/prompt-engineering)
+* [DAIR AI – Prompt Engineering Guide](https://dair.ai/projects/prompt-engineering/)
   Recurso detallado con técnicas y mejores prácticas para prompt engineering.
 
-* [OpenAI Cookbook – Prompt Best Practices](https://github.com/openai/openai-cookbook/blob/main/examples/Prompt_Best_Practices.ipynb)
+* [GPT-4.1 Prompting Guide](https://cookbook.openai.com/examples/gpt4-1_prompting_guide)
   Colección de ejemplos y consejos oficiales para mejorar la interacción con modelos OpenAI.
 
-* [ChatGPT Prompt Engineering for Developers (deeplearning.ai)](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/)
-  Curso práctico para aprender técnicas de prompting aplicado a desarrolladores.
+* [Prompt engineering overview](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
+  Introducción a técnicas de prompting aplicado a desarrolladores.
 
 ---
 
