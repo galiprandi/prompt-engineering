@@ -9,7 +9,7 @@ canvasWidth: 1280
 defaults:
   layout: cover
   transition: fade
-  
+
 seoMeta:
   ogTitle: "Prompt Engineering – Guía Práctica para Equipos Técnicos"
   ogDescription: "Esta guía presenta técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo."
@@ -20,29 +20,26 @@ seoMeta:
 ---
 
 # Prompt Engineering
-## Guía Práctica para Equipos Técnicos
+## Guía Práctica
 
-<div class="abs-br m-6 text-sm">
-  Germán Aliprandi | Licencia MIT
+Esta guía presenta técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo.
+
+<div class="abs-br m-6 text-lg">
+  <a href="https://galiprandi.github.io/me" target="_blank">Germán Aliprandi</a> | Licencia MIT
 </div>
 
 
 ---
 
+## Temario
 
-# Agenda
+**1. Fundamentos y Principios Clave:** Impacto del prompt, anatomía de un LLM y buenas prácticas.
 
-**1. Fundamentos y Principios Clave**
-   - Impacto del prompt, anatomía de un LLM y buenas prácticas.
+**2. Técnicas de Prompting Esenciales:** Zero-shot, Few-shot, Chain-of-Thought, RAG y más.
 
-**2. Técnicas de Prompting Esenciales**
-   - Zero-shot, Few-shot, Chain-of-Thought, RAG y más.
+**3. Framework CRTR:** Estructura, beneficios y ejemplos prácticos.
 
-**3. Framework CRTR para Escalabilidad**
-   - Estructura, beneficios y ejemplos prácticos.
-
-**4. Recursos y Siguientes Pasos**
-   - Plantillas, lecturas y herramientas útiles.
+**4. Recursos:** Plantillas, lecturas y herramientas útiles.
 
 
 
@@ -324,14 +321,11 @@ class: "text-center"
 **Germán Aliprandi**
 
 <div class="flex justify-center items-center space-x-4 mt-4">
-  <a href="mailto:galiprandi@gmail.com" class="flex items-center space-x-2">
-    <span>📧 Email</span>
-  </a>
   <a href="https://linkedin.com/in/galiprandi" target="_blank" class="flex items-center space-x-2">
     <span>🔗 LinkedIn</span>
   </a>
   <a href="https://github.com/galiprandi" target="_blank" class="flex items-center space-x-2">
-    <carbon-logo-github /> GitHub
+    <carbon-logo-github />  GitHub
   </a>
 </div>
 
