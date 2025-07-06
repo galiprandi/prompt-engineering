@@ -104,27 +104,41 @@ Logras controlar la salida del modelo de forma precisa **sin necesidad de modifi
 
 ---
 
-## Buen Prompt vs Mal Prompt
+## Buen Prompt vs. Mal Prompt
 
-No todos los prompts son iguales. Pequeños cambios pueden transformar la calidad de las respuestas.
+<div class="grid grid-cols-2 gap-8 items-start">
 
-| Prompt flojo | Prompt afinado |
-|--------------|----------------|
-| “Resume este texto.” | “Eres editor técnico. Resume en ≤150 palabras, sin jerga, en español neutro, destacando argumentos clave y conclusiones.” |
+<div>
+<h3 class="flex items-center gap-2">✅ Buen Prompt</h3>
+<p class="text-sm opacity-75">Define rol, contexto, límites y formato, guiando al modelo hacia un resultado preciso.</p>
+<br/>
+<div class="p-4 bg-green-50 text-green-800 rounded-lg">
+"Eres editor técnico. Resume en ≤150 palabras, sin jerga, en español neutro, destacando argumentos clave y conclusiones."
+</div>
+</div>
 
-✅ **Un buen prompt define rol, contexto, límites y tono.**
+<div>
+<h3 class="flex items-center gap-2">❌ Mal Prompt</h3>
+<p class="text-sm opacity-75">Deja decisiones críticas al modelo, generando respuestas genéricas o incorrectas.</p>
+<br/>
+<div class="p-4 bg-red-50 text-red-800 rounded-lg">
+"Resume este texto."
+</div>
+</div>
 
-❌ **Un prompt vago deja demasiadas decisiones al modelo.**
+</div>
 
 ---
 
 ## Técnica 1: Zero-shot / Few-shot
 
 ### Zero-shot
-✅ El modelo responde usando solo su conocimiento general, sin ejemplos específicos.  
+
+El modelo responde usando solo su conocimiento general, sin ejemplos específicos.
 
 ### Few-shot
-✅ Incluye 1-5 ejemplos para mostrar al modelo el estilo, formato o nivel de detalle deseado.  
+
+Incluye 1-5 ejemplos para mostrar al modelo el estilo, formato o nivel de detalle deseado.
 
 **Ejemplo Few-shot**
 
@@ -144,11 +158,14 @@ Bot:
 
 ## Técnica 2: Chain-of-Thought (CoT)
 
+
+**Beneficios**
+
 ✔️ “Piensa paso a paso” obliga al modelo a explicitar su razonamiento.  
 
 ✔️ Mejora precisión en tareas complejas o con varios pasos.  
 
-Variantes avanzadas: *Self-Consistency*, *Tree of Thoughts*.
+**Variantes avanzadas:** *Self-Consistency*, *Tree of Thoughts*.
 
 **Ejemplo**
 
@@ -159,13 +176,17 @@ Razoná paso a paso y, al final, responde en una sola línea.
 
 ---
 
-# Técnica 3: Role / Persona
+## Técnica 3: Role / Persona
 
-✔️ Define quién “habla”: mentor, abogado, tester, etc.  
+Asignar una identidad y un rol al modelo es clave para guiar su comportamiento y estilo.
 
-✔️ Establece contexto y tono coherente.  
+**Beneficios**
 
-✔️ Mejora consistencia y relevancia de la respuesta.
+✔️ Aumenta la relevancia de la respuesta.
+
+✔️ Asegura consistencia y coherencia en el tono.
+
+✔️ Facilita la creación de plantillas reutilizables por todo el equipo.
 
 **Ejemplo**
 
@@ -176,13 +197,17 @@ Explica a un junior por qué conviene usar `unknown` en lugar de `any`.
 
 ---
 
-# Técnica 4: Retrieval-Augmented Generation (RAG)
+## Técnica 4: Retrieval-Augmented Generation (RAG)
 
-✔️ Integra fragmentos de documentos externos para respuestas precisas y actualizadas.  
+Integra conocimiento externo en tiempo real para generar respuestas más precisas y actualizadas, basándose en fuentes de datos verificables.
 
-✔️ Ideal para FAQs, bases de conocimiento y documentación interna.  
+**Beneficios**
 
-✔️ Reduce alucinaciones al apoyar respuestas en datos verificables.
+✔️ Reduce alucinaciones al basar las respuestas en datos concretos.
+
+✔️ Permite responder sobre información muy reciente o privada.
+
+✔️ Ideal para sistemas de preguntas y respuestas sobre documentación interna.
 
 **Ejemplo**
 
@@ -196,15 +221,17 @@ Pregunta: ¿Cómo cambio el token de refresh?
 
 ---
 
-# Técnica 5: Multimodal & Tool-augmented
+## Técnica 5: Multimodal & Tool-augmented
 
-<br/>
+Permite al LLM interactuar con herramientas externas (APIs, funciones) y procesar múltiples formatos de entrada, como imágenes y texto.
 
-✔️ Combina texto, imágenes y llamadas a funciones (`function calling`).  
+**Beneficios**
 
-✔️ Útil para ejecutar código, analizar diagramas o integrar herramientas externas.  
+✔️ Combina texto, imágenes y llamadas a funciones (`function calling`).
 
-✔️ Amplía las capacidades del LLM más allá del texto plano.
+✔️ Permite ejecutar código, analizar diagramas o integrar herramientas externas.
+
+✔️ Amplía las capacidades del LLM mucho más allá del texto plano.
 
 **Ejemplo**
 
@@ -217,41 +244,37 @@ Pregunta: ¿Cómo cambio el token de refresh?
 
 ---
 
-# Técnica 6: Incremental Prompting
+## Técnica 6: Incremental Prompting
 
-Consiste en **dividir un problema complejo en pasos pequeños**, usando prompts en secuencia donde cada resultado alimenta al siguiente.
+Consiste en dividir un problema complejo en pasos pequeños, usando prompts en secuencia donde cada resultado alimenta al siguiente.
 
-**Beneficios clave:**
+**Beneficios**
 
 ✔️ Mejora la precisión en tareas complejas.
 
-✔️ Reduce errores de contexto.
+✔️ Reduce errores de contexto y aumenta el control del proceso.
 
-✔️ Permite un control granular del proceso.
+✔️ Ideal para procesar textos largos o generar código paso a paso.
 
-**Ejemplo (Traducción + Resumen):**
+**Ejemplo**
 
-1.  **Prompt 1 (Traducir):** `Traduce: “La IA está transformando las empresas.”`
-    → `AI is transforming businesses.`
-2.  **Prompt 2 (Resumir):** `Resume el texto anterior en una frase.`
-    → `AI is changing business.`
+```text
+# Prompt 1: Traducir
+Traduce al inglés: "La inteligencia artificial está transformando las empresas."
+> "Artificial intelligence is transforming businesses."
 
-**Aplicaciones:**
-
-✔️ Procesamiento de textos largos.
-
-✔️ Generación de código paso a paso.
-
-✔️ Razonamiento complejo.
+# Prompt 2: Resumir
+Resume el texto anterior en una sola frase.
+> "AI is changing business."
+```
 
 ---
 
-# Framework CRTR – Definición
+## El Framework CRTR
 
-El framework CRTR es una metodología sistemática para estructurar prompts de manera clara y escalable.  
-Divide el prompt en cuatro bloques esenciales que ayudan a reducir ambigüedad y facilitar la reutilización:  
-Contexto (qué sabe la IA), Rol (quién responde), Tarea (qué debe hacer) y Resultado (cómo se presenta la salida).  
-Esto permite crear prompts mantenibles y auditables en equipos técnicos.
+El framework **CRTR** es una metodología sistemática para estructurar prompts de manera clara y escalable que permite crear prompts mantenibles y auditables en equipos técnicos.
+
+Divide el prompt en **cuatro bloques esenciales** que ayudan a reducir ambigüedad y facilitar la reutilización:
 
 | Bloque          | Contenido                  | Pregunta clave              |
 |-----------------|----------------------------|----------------------------|
@@ -262,7 +285,9 @@ Esto permite crear prompts mantenibles y auditables en equipos técnicos.
 
 ---
 
-# Beneficios del Framework CRTR
+## Beneficios del Framework CRTR
+
+El framework CRTR ofrece ventajas que lo hacen ideal para equipos técnicos que buscan mantener **consistencia y eficiencia en sus interacciones con LLMs**, optimizando la calidad, performance y reduciendo los costos de uso en grandes proyectos.
 
 ✔️ Reduce ambigüedad, mejorando la calidad de las respuestas.  
 
@@ -274,15 +299,23 @@ Esto permite crear prompts mantenibles y auditables en equipos técnicos.
 
 ✔️ Facilita el debugging de prompts: Si una respuesta es incorrecta, puedes aislar el problema. ¿Falló el Contexto? ¿El Rol es ambiguo? ¿La Tarea es imprecisa?
 
-Estas ventajas hacen que CRTR sea ideal para equipos técnicos que buscan mantener consistencia y eficiencia en sus interacciones con LLMs.
-
 ---
 
-# CRTR – Ejemplo 1
+## Framework CRTR, ejemplo 1
 
-Este ejemplo muestra cómo estructurar un prompt para redactar documentación técnica clara y precisa.  
-Definimos el contexto para situar al modelo, el rol para darle la perspectiva adecuada, la tarea específica y el formato esperado para el resultado.  
-Esto garantiza respuestas consistentes y alineadas con el objetivo.
+Este ejemplo muestra cómo estructurar un prompt para redactar documentación técnica clara y precisa asegurando respuestas consistentes y alineadas con el objetivo.
+
+**Metodología:**
+ 
+ ✔️ **Contexto:** Defininimos el contexto para situar al modelo
+ 
+ ✔️ **Role:** Definimos el rol para darle la perspectiva adecuada
+ 
+ ✔️ **Task:** Definimos la tarea específica
+ 
+ ✔️ **Result:** Definimos el formato esperado para el resultado
+ 
+**Ejemplo:**
 
 ```text
 Context: Manual “API-Pagos v2.3”.  
@@ -293,10 +326,21 @@ Result: Markdown, ≤200 palabras, diagrama ASCII.
 
 ---
 
-# CRTR – Ejemplo 2
+## Framework CRTR, ejemplo 2
 
-Este prompt está diseñado para comunicar resultados de un sprint de forma clara y motivadora.  
-Se especifica el contexto del proyecto, el rol del emisor y la tarea de crear un anuncio con un tono apropiado, limitando la extensión para mantenerlo conciso y efectivo.
+Este prompt está diseñado para comunicar resultados de un sprint de forma clara y motivadora, manteniendo al equipo informado y alineado.
+
+**Metodología:**
+ 
+✔️ **Contexto:** Especificamos los hitos clave del sprint finalizado.
+ 
+✔️ **Role:** Asignamos el rol de Product Owner para dar una perspectiva de producto.
+ 
+✔️ **Task:** Solicitamos la redacción de un anuncio interno.
+ 
+✔️ **Result:** Definimos un formato conciso, con un tono motivador y uso de emojis.
+ 
+**Ejemplo:**
 
 ```text
 Context: Sprint 5 finalizado; hitos: OAuth, 95% tests verdes.  
@@ -307,10 +351,21 @@ Result: ≤180 palabras, tono motivador, emojis moderados.
 
 ---
 
-# CRTR – Ejemplo 3
+## Framework CRTR, ejemplo 3
 
-Este prompt estructura la descripción de un Pull Request para facilitar la revisión y auditoría.  
-Incluye contexto técnico, rol del revisor, tarea concreta y formato detallado, ayudando a que la información crítica sea clara y organizada.
+Este prompt estructura la descripción de un Pull Request para facilitar la revisión y auditoría, asegurando que la información crítica sea clara y organizada.
+
+**Metodología:**
+ 
+✔️ **Contexto:** Aportamos el contexto técnico de la migración.
+ 
+✔️ **Role:** Asignamos el rol de revisor/a para asegurar una perspectiva de calidad.
+ 
+✔️ **Task:** Solicitamos la redacción de la descripción del PR, incluyendo riesgos y pruebas.
+ 
+✔️ **Result:** Exigimos un formato Markdown estructurado en secciones para facilitar la lectura.
+ 
+**Ejemplo:**
 
 ```text
 Context: Migración de “user-auth” a TS 5.5 estricto.  
@@ -321,28 +376,28 @@ Result: Markdown con secciones: Contexto, Cambios, Pruebas, Checklist QA.
 
 ---
 
-# CRTR – Recursos
+## Recursos y Herramientas
 
-- Plantilla rápida:
+**Plantilla CRTR**
+
+Utiliza plantilla CRTR para empezar a construir prompts efectivos.
 
 ```text
-Context: …  
-Role: …  
-Task: …  
+Context: …
+Role: …
+Task: …
 Result: …
-````
+```
 
-* [Prompt Engineering Guide](https://learnprompting.org/docs/introduction)
-  Guía completa para entender y construir prompts efectivos.
+**Lecturas Recomendadas**
 
-* [DAIR AI – Prompt Engineering Guide](https://dair.ai/projects/prompt-engineering/)
-  Recurso detallado con técnicas y mejores prácticas para prompt engineering.
-
-* [GPT-4.1 Prompting Guide](https://cookbook.openai.com/examples/gpt4-1_prompting_guide)
-  Colección de ejemplos y consejos oficiales para mejorar la interacción con modelos OpenAI.
-
-* [Prompt engineering overview](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
-  Introducción a técnicas de prompting aplicado a desarrolladores.
+📚 [Prompt Engineering Guide](https://learnprompting.org/docs/introduction): introducción del “Prompt Engineering Guide” de Learn Prompting.
+<br>
+📚 [DAIR AI – Prompt Engineering Guide](https://dair.ai/projects/prompt-engineering/): guía libre y de código abierto sobre prompt engineering.
+<br>
+📚 [GPT-4.1 Prompting Guide](https://cookbook.openai.com/examples/gpt4-1_prompting_guide): ofrece técnicas avanzadas para aprovechar al máximo la familia GPT‑4.1.
+<br>
+📚 [Prompt engineering overview](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview): guía completa y práctica para optimizar el rendimiento de modelos Claude.
 
 
 ---
