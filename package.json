@@ -9,7 +9,7 @@
   "dependencies": {
     "@slidev/cli": "^0.48.0",
     "@slidev/theme-default": "*",
-    "@slidev/theme-geist": "^0.4.0",
+    "slidev-theme-geist": "^0.8.1",
     "vue": "^3.4.27"
   },
   "devDependencies": {
