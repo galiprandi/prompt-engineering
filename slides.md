@@ -2,9 +2,9 @@
 title: Prompt Engineering – Guía Práctica para Equipos Técnicos
 author: Germán Aliprandi
 theme: geist
-transition: slide-left
 colorSchema: light
 canvasWidth: 1280
+transition: fade
 
 defaults:
   layout: cover
