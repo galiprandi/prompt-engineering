@@ -1,7 +1,6 @@
 ---
 title: Prompt Engineering – Guía Práctica para Equipos Técnicos
 author: Germán Aliprandi
-date: "3 Jul 2024"
 theme: geist
 transition: slide-left
 colorSchema: light
@@ -11,6 +10,10 @@ defaults:
   layout: default
   transition: fade
   
+seoMeta:
+  ogTitle: "Prompt Engineering – Guía Práctica para Equipos Técnicos"
+  ogDescription: "Esta guía presenta técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo."
+  ogUrl: "https://galiprandi.github.io/prompt-engineering/"
 ---
 
 
