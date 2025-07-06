@@ -6,6 +6,11 @@ theme: geist
 transition: slide-left
 colorSchema: light
 canvasWidth: 1280
+
+defaults:
+  layout: default
+  transition: fade
+  
 ---
 
 
@@ -14,6 +19,7 @@ canvasWidth: 1280
 **Guía Práctica para Equipos Técnicos**
 
 Técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo.
+
 
 ---
 
