@@ -1,10 +1,9 @@
 #slide-content {
   height: 100vh;
   padding: 0;
+  background: url('../assets/background.jpg') center center / cover no-repeat;
 }
 
 .slidev-page {
-  background: url('../assets/background.jpg') center center / cover no-repeat !important;
-
   padding: 2rem 4rem !important;
 }
