@@ -1,15 +1,18 @@
 {
-  "name": "prompt-engineering",
-  "type": "module",
+  "name": "prompt-engineering-presentation",
   "private": true,
   "scripts": {
+    "dev": "slidev",
     "build": "slidev build",
-    "dev": "slidev --open",
     "export": "slidev export"
   },
   "dependencies": {
-    "@slidev/cli": "^52.0.0",
-    "slidev-theme-geist": "^0.8.1",
-    "vue": "^3.5.17"
+    "@slidev/cli": "^0.48.0",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-geist": "^0.4.0",
+    "vue": "^3.4.27"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.44.1"
   }
 }

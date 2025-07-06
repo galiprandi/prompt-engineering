@@ -14,8 +14,10 @@ seoMeta:
   ogTitle: "Prompt Engineering – Guía Práctica para Equipos Técnicos"
   ogDescription: "Esta guía presenta técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo."
   ogUrl: "https://galiprandi.github.io/prompt-engineering/"
----
 
+
+class: "text-center"
+---
 
 # Prompt Engineering
 
@@ -312,12 +314,31 @@ Result: …
 * [Prompt engineering overview](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
   Introducción a técnicas de prompting aplicado a desarrolladores.
 
+
+---
+layout: center
+class: "text-center"
 ---
 
-# Muchas gracias
+# ¡Gracias!
 
-### Germán Aliprandi
+### Hablemos de IA y desarrollo
 
-📧 galiprandi@gmail.com
+**Germán Aliprandi**
 
-🔗 [linkedin.com/in/galiprandi](https://linkedin.com/in/galiprandi)
+<div class="flex justify-center items-center space-x-4 mt-4">
+  <a href="mailto:galiprandi@gmail.com" class="flex items-center space-x-2">
+    <span>📧 Email</span>
+  </a>
+  <a href="https://linkedin.com/in/galiprandi" target="_blank" class="flex items-center space-x-2">
+    <span>🔗 LinkedIn</span>
+  </a>
+  <a href="https://github.com/galiprandi" target="_blank" class="flex items-center space-x-2">
+    <carbon-logo-github /> GitHub
+  </a>
+</div>
+
+<div class="mt-8">
+  <p>Escanea para ver esta presentación online</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://galiprandi.github.io/prompt-engineering/" alt="QR Code" class="mx-auto" />
+</div>
