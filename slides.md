@@ -1,6 +1,10 @@
 ---
-title: Prompt Engineering – Guía Práctica para Equipos Técnicos
+title: 🧠 Prompt Engineering
+subtitle: Guía Práctica para Equipos Técnicos
 author: Germán Aliprandi
+date: Abril 2025
+license: Licencia MIT
+
 theme: geist
 colorSchema: light
 canvasWidth: 1280
@@ -11,19 +15,34 @@ defaults:
   transition: fade
 
 seoMeta:
+  title: "Prompt Engineering – Guía Práctica para Equipos Técnicos"
+  description: "Esta guía presenta técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo."
+  keywords: "prompt engineering, técnicas de prompt, frameworks de prompt, desarrollo de IA, arquitectura de IA, inteligencia artificial, patrones de diseño, Cencosud Tech"
   ogTitle: "Prompt Engineering – Guía Práctica para Equipos Técnicos"
   ogDescription: "Esta guía presenta técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo."
-  ogUrl: "https://galiprandi.github.io/prompt-engineering/"
+  ogUrl: "https://galiprandi.github.io/prompt-engineering"
+
+  twitterCard: "summary_large_image"
+  twitterCreator: "@galiprandi"
+  canonicalUrl: "https://galiprandi.github.io/prompt-engineering"
 ---
 
-# Prompt Engineering
+# {{ $frontmatter.title }}
+### {{ $frontmatter.subtitle }}
 
-**Guía Práctica**
 
 Esta guía presenta técnicas y frameworks para optimizar la interacción con Modelos de Lenguaje (LLMs) en entornos de desarrollo.
 
-<div class="abs-br m-6 text-lg">
-  <a href="https://galiprandi.github.io/me" target="_blank">Germán Aliprandi</a> | Licencia MIT
+<div class="mt-10 text-l">
+<b>{{ $frontmatter.author }}</b> 
+<br>
+{{ $frontmatter.date }}
+<br>
+{{ $frontmatter.license }}
+</div>
+
+<div class="absolute bottom-8 right-8 text-l bg-black/10 px-4 py-2 rounded-full">
+  ➡️ Navega con la flecha derecha del teclado
 </div>
 
 
