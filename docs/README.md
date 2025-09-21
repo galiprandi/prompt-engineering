@@ -1,13 +1,19 @@
-# Documentation Index
+# Project Documentation Index
 
-Last updated: 2025-09-21 14:15 (commit eabb9a0)
+Last updated: 2025-09-21 00:00:00 UTC
+Commit: b0f71fc
 
-This `docs/` folder contains technical documentation for the `prompt-engineering` repository.
+This project is a Slidev presentation built with Vue and Slidev. Primary scripts from `package.json`:
 
-- `architecture.md` — high-level architecture and runtime
-- `modules.md` — key modules and file map
-- `stack.md` — runtime, frameworks and dependencies
-- `technical-debt.md` — TODO/FIXME and notes found in source
+```bash
+pnpm run dev   # runs slidev in dev mode
+pnpm run build # builds static slides
+pnpm run export# exports slides to PDF/images
+```
 
-Refer to the repository root `README.md` for the project overview and slides.
+This `docs/` folder contains high-level documentation generated from the current codebase.
 
+- [Architecture](architecture.md)
+- [Modules](modules.md)
+- [Stack](stack.md)
+- [Technical Debt](technical-debt.md)

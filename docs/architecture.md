@@ -1,21 +1,24 @@
 # Architecture
 
-Last updated: 2025-09-21 14:15 (commit eabb9a0)
+Last updated: 2025-09-21 00:00:00 UTC
+Commit: b0f71fc
 
-This repository is a static site / presentation focused project built with web frameworks (Node.js + frontend). The codebase layout at a high level:
+This repository is a static site / presentation built with a JavaScript web framework (see `package.json`). The codebase layout shows the following high-level pieces:
 
-- Root: static assets, slides and site config (`netlify.toml`, `vercel.json`).
-- `pages/` and `components/` contain the frontend pages and UI components.
-- `assets/`, `styles/`, and `snippets/` hold static content used by the presentation.
+- `pages/` – site pages and routing.
+- `components/` – React/Vue components used by pages.
+- `assets/`, `styles/` – static assets and styling.
+- `snippets/`, `slides.md` – content and presentation material.
 
-There is no server-side API in this repository — it's intended to be deployed as a static site (GitHub Pages / Netlify / Vercel).
-
-Simple deployment flow (conceptual):
+Flow (simplified):
 
 ```mermaid
 flowchart LR
-  A["Source (this repo)"] --> B["Build (static site)"] --> C["Deploy (Netlify/Vercel/GitHub Pages)"]
-  B --> D["Assets: /assets, /styles, /snippets"]
-  B --> E["Pages & Components"]
+  A["Source Markdown (slides.md)"] --> B["Pages & Components"]
+  B --> C["Build (static site)"]
+  C --> D["Deployed site (GitHub Pages / Netlify)"]
 ```
+
+Notes:
+- The project appears intended as a static presentation site; the build/deploy pipeline is configured for Netlify and GitHub Pages (`netlify.toml`, README links).
 

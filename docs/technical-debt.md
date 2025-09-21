@@ -1,14 +1,9 @@
-# Technical debt and TODOs
+# Technical Debt
 
-Last updated: 2025-09-21 14:15 (commit eabb9a0)
+Last updated: 2025-09-21 00:00:00 UTC
+Commit: b0f71fc
 
-I searched the codebase for inline `TODO`, `FIXME`, or `XXX` markers. No actionable markers were found in source files besides the lockfile binary data.
+I scanned the codebase for common TODO/FIXME/XXX markers and found none.
 
-If you want a deeper sweep (comments, PR history), run:
-
-```
-rg "TODO|FIXME|XXX" -n
-```
-
-Add items here as they are discovered.
+If you want this file to include manual notes, add `// TODO:` or `/* TODO: */` comments in code and re-run documentation generation.
 

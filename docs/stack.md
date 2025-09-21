@@ -1,24 +1,13 @@
-# Stack and Runtime
+# Stack
 
-Last updated: 2025-09-21 14:15 (commit eabb9a0)
+Last updated: 2025-09-21 00:00:00 UTC
+Commit: b0f71fc
 
-This project is a client-side/static site built with Node.js tooling. Evidence in the codebase:
+Evidence from the repository indicates a JavaScript/TypeScript static site using Node tooling.
 
-- `package.json` indicates Node.js development dependencies and scripts.
-- `pnpm-lock.yaml` shows packages installed via `pnpm`.
-- Configuration for static hosts: `netlify.toml`, `vercel.json`.
+- Package manager: `pnpm` (presence of `pnpm-lock.yaml`).
+- Node dependencies: see `package.json` for exact frameworks and build tools.
+- Deployment hints: `netlify.toml` and GitHub Pages link in README.
 
-To build or run locally (inferred):
-
-```
-# install
-pnpm install
-
-# build or serve depending on framework
-pnpm run build
-
-pnpm run dev
-```
-
-(Check `package.json` for exact scripts.)
+To inspect exact dependencies run `cat package.json` locally.
 

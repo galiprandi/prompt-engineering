@@ -1,18 +1,18 @@
-# Modules and File Map
+# Modules
 
-Last updated: 2025-09-21 14:15 (commit eabb9a0)
+Last updated: 2025-09-21 00:00:00 UTC
+Commit: b0f71fc
 
-Quick map of important folders and their intent:
+Key directories and their roles:
 
-- `pages/` — top-level pages used by the static site/presentation.
-- `components/` — reusable UI components.
-- `assets/` — images and media used by slides and pages.
-- `styles/` — CSS/SCSS or styling assets.
-- `snippets/` — code snippets referenced in the presentation.
+- `pages/` — top-level pages for the site. Look here for routing and content entry points.
+- `components/` — UI components used across pages.
+- `assets/` — images and static files.
+- `styles/` — global styles and CSS resources.
+- `snippets/` — reusable content fragments.
 
-Key files at repository root:
+How to locate a component:
 
-- `README.md` — presentation overview (Spanish).
-- `slides.md` — the slide deck content (Markdown).
-- `package.json` / `pnpm-lock.yaml` — Node.js package metadata and lockfile.
+1. Search `components/` for the component name.
+2. Check `pages/` to find where the component is rendered.
 
