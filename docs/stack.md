@@ -1,7 +1,7 @@
 # Stack
 
-Last updated: 2025-09-21 17:35:29 UTC
-Commit: 0fb5a83
+Last updated: 2025-09-21 17:38:22 UTC
+Commit: f59d142
 
 Runtime and tooling used by the project (grounded in `package.json`):
 
@@ -21,4 +21,3 @@ pnpm run export# export slides to PDF/images
 Notes:
 - No backend runtime detected; this is a static presentation repository.
 - All dependencies are listed in `package.json` and locked in `pnpm-lock.yaml`.
-

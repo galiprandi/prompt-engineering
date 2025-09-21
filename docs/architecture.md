@@ -1,7 +1,7 @@
 # Architecture
 
-Last updated: 2025-09-21 17:35:29 UTC
-Commit: 0fb5a83
+Last updated: 2025-09-21 17:38:22 UTC
+Commit: f59d142
 
 This repository is a Slidev-based presentation site. It follows a simple static-site layout using Vue and Slidev.
 
@@ -27,4 +27,3 @@ flowchart LR
 Notes:
 - The project uses Slidev to serve and build slides: see `package.json` scripts `dev`, `build`, `export`.
 - Styling and theming use `styles/` and installed Slidev themes in `package.json`.
-
