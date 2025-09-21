@@ -1,7 +1,7 @@
 # Project Documentation Index
 
-Last updated: 2025-09-21 17:28:34 UTC
-Commit: 6107b4d
+Last updated: 2025-09-21 17:33:13 UTC
+Commit: cd0568d
 
 This project is a Slidev presentation built with Vue and Slidev. Primary scripts from `package.json`:
 
@@ -17,3 +17,6 @@ This `docs/` folder contains high-level documentation generated from the current
 - [Modules](modules.md)
 - [Stack](stack.md)
 - [Technical Debt](technical-debt.md)
+
+Notes:
+- `architecture.md` added to reflect repository structure (slides, components, assets).
